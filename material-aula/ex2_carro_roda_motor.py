@@ -16,9 +16,10 @@ class Roda:
 
 class Carro:
 	def __init__(self, marca='', modelo='', motor=None, rodas=None):
+		
+		self._motor = motor
 		self._marca = marca
 		self._modelo = modelo
-		self._motor = motor
 		self._rodas = rodas
 
 	def liga(self):

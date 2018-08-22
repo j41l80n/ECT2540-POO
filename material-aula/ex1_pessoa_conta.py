@@ -1,3 +1,8 @@
+#associacao
+	#obejtos podem existir sem se associarem
+
+#agregacao
+	#
 class Pessoa:
 	def __init__(self, nome, cpf):
 		self._nome = nome
@@ -10,11 +15,14 @@ class Pessoa:
 		for c in self._contas:
 			c.imprime_informacao()
 
+	def criar_conta(self):
+		c = Conta(self, num, 1000.0)
+		self._contas.append(c)
+
 class Conta:
-	def __init__(self, tit=None, num=0, saldo=0.0):
+	def __init__(self, tit, num=0, saldo=0.0):
 		self._numero = num
 		self._saldo = saldo
-		self._titular = tit
 
 	def imprime_informacao(self):
 		print('titular: {}'.format(self._titular._nome))
@@ -28,5 +36,3 @@ p._contas.append(c1)
 p._contas.append(c2)
 p._contas.append(c3)
 p.imprime_contas()
-
-
