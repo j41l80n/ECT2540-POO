@@ -12,7 +12,7 @@ class Lista:
 		
 	def adiciona(self, object):
 		if self.__capacidade == self.__quantidade:
-			print('teste')
+			print('erro')
 		else:
 			self.__dados[self.__quantidade] = object
 			self.__quantidade += 1
@@ -51,14 +51,15 @@ class Lista:
 		return self
 
 	def inverte(self):
-		dadosNovo = []
-		for i in range(self.__quantidade, -1, -1):
-			# print(i)
-			dadosNovo[self.__quantidade-i] += self.__dados[i]
-		print(dadosNovo)
+		listaInvertida = Lista(self.__quantidade)
+		for i in range(self.__quantidade-1, -1, -1):
+			listaInvertida.adiciona(self.__dados[i])
+		return listaInvertida.imprime()
 
-	def concatena(self, Lista):
-		pass
+	def concatena(self, lista):
+		listaConcatenada = Lista(self.__quantidade)
+		for i in range(self.__quantidade-1):
+			listaConcatenada.adiciona(lista.get_objeto())
 
 	def tamanho(self):
 		i = 0
@@ -74,7 +75,7 @@ lista1.adiciona('ect')
 lista1.adiciona('POO')
 # print(lista1.eh_vazio())
 # print(lista1.get_objeto(0))
-lista1.remove(1)
+# lista1.remove(1)
 # print(lista.get_objeto(0))
 # print(lista.get_objeto(1))
 # lista1.reseta()
@@ -84,4 +85,4 @@ lista1.remove(1)
 lista2 = lista1.copia()
 # print(lista2.eh_vazio())
 lista2.eh_vazio()
-lista2.inverte()
+lista1.inverte()
