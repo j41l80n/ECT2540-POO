@@ -1,6 +1,6 @@
 class Celula():
-	def __init__(self, dado, proximo=None):
-		self.__dado = dado
+	def __init__(self, object, proximo=None):
+		self.__dado = object
 		self.__proximo = proximo
 
 	def get_dado(self):

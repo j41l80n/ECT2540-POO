@@ -1,4 +1,5 @@
-import arquivo_celula 
+# from celula import *
+import celula
 
 class ListaEncadeada():
 	def __init__(self, head=None, tail=None):
@@ -16,27 +17,36 @@ class ListaEncadeada():
 		return self.__tail
 
 	def adiciona(self, dado):
-		celula = Celula(dado)
+		cel = celula.Celula(dado)
 
 		if self.__head == None:
-			self.__head = celula
-			self.__tail = celula
+			self.__head = cel
+			self.__tail = cel
 			self.__contador += 1
 		else:
-			# self.__head = celula
-			self.__tail.set_proximo(celula)
-			self.__tail = celula
+			self.__tail.set_proximo(cel)
+			self.__tail = cel
 			self.__contador += 1
 
-	def remove():
-		pass
+	def remove(self, indice):
+		if self.__contador > 0:
+			for i in range(indice-1):
+				print('remove: ', i)
+			self.__contador -= 1
+		else:
+			print('erro ao remover')
 
 
 	contador = property(get_contador)
 	head = property(get_head)
 	tail = property(get_tail)
 
+#realizando testes
+if __name__ == "__main__":
+	listaEncadeada = ListaEncadeada()
+	listaEncadeada.adiciona('teste1')
+	listaEncadeada.adiciona('teste1')
 
-listaEncadeada = ListaEncadeada()
-listaEncadeada.adiciona('teste1')
-print(listaEncadeada.head.proximo)
+	print('contador: ', listaEncadeada.contador)
+	listaEncadeada.remove(2)
+	print('contador: ', listaEncadeada.contador)
