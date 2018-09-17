@@ -37,9 +37,9 @@ class ListaEncadeada():
 			print('erro ao remover')
 
 
-	contador = property(get_contador)
-	head = property(get_head)
-	tail = property(get_tail)
+	contador = property(get_contador, None)
+	head = property(get_head, None)
+	tail = property(get_tail, None)
 
 #realizando testes
 if __name__ == "__main__":
