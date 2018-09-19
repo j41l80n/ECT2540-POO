@@ -1,5 +1,3 @@
-# # from celula import *
-# import celula
 import random
 
 class Carro:
