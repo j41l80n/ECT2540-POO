@@ -1,7 +1,7 @@
 import patio
 
 class Estacionamento:
-	def __init__(self, patio=5):
+	def __init__(self, capacidade=None):
 		self.__patio = patio
 		total_carros = 0
 
