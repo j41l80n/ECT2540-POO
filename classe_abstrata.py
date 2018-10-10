@@ -2,25 +2,77 @@ from abc import ABC, abstractmethod
 
 class Animal(ABC):
     @abstractmethod
-    pass
+    def __init__(self):
+        pass
+        
+    def nasce(self):
+        print('nasci')
+    
+    def morre(self):
+        print('morri')
+
+    @abstractmethod
+    def emite_som(self):
+        pass
 
 class Mamifero(Animal):
     @abstractmethod
-    pass
+    def __init__(self):
+        # Animal.__init__(self):
+        pass
+    
+    def amamenta(self):
+        print('estou mamando')
+
 class Ave(Animal):
     @abstractmethod
-    pass
+    def __init__(self):
+        # Animal.__init__(self):
+        pass
+
+    def voa(self):
+        print('estou voando')
 
 class Gato(Mamifero):
-    pass
+    def __init__(self):
+        pass
+        
+    def emite_som(self):
+        return 'miau'
+
 class Cachorro(Mamifero):
-    pass
+    def __init__(self):
+        pass
+        
+    def emite_som(self):
+        return 'auau'
 
 class Ornitorrinco(Mamifero):
-    pass
+    def __init__(self):
+        pass
+        
+    def emite_som(self):
+        return 'adfsijo'
 
 class Pinguim(Ave):
-    pass
+    def __init__(self):
+        pass
+        
+    def emite_som(self):
+        return 'fute fute'
 
 class Aguia(Ave):
-    pass
+    def __init__(self):
+        pass
+        
+    def emite_som(self):
+        return 'ieeeem'
+
+if __name__ == "__main__":
+    gato = Gato()
+    
+    gato.nasce()
+    print(gato.emite_som())
+    gato.amamenta()
+    print(gato.emite_som())
+    gato.morre()
