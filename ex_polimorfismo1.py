@@ -1,4 +1,16 @@
 class Pessoa:
+    @staticmethod
+    def _lista_pessoas(pessoas):
+        media = 0
+        for p in pessoas:
+            print(p.idade)
+            media += p.idade
+
+        print(f'soma de idades: {media}')
+        print(f'quantidade pessoas: {len(pessoas)}')
+        
+        return media / len(pessoas)
+
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
@@ -47,5 +59,12 @@ if __name__ == "__main__":
     
     print(Pessoa.compara_idades(prof, a)) # forma 3: método que recebe objetos derivados de pessoa
 
-    for p in [p, a, prof]:
-        print(p) # forma 4: sobrecarga de operadores
+    for ps in [p, a, prof]:
+        print(ps) # forma 4: sobrecarga de operadores
+
+    lista = list()
+    lista.append(p)
+    lista.append(a)
+    lista.append(prof)
+
+    print(f'media de idades {a1._lista_pessoas(lista)}')
