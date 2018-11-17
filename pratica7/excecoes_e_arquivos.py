@@ -25,13 +25,25 @@ class LeitorPessoas:
 
     def _obtem_num_pessoas(self):
         """retorna a quantidade de pessoas em um arquivo"""
-        arq = open(self.nome_arquivo, 'r') 
-        arq = int(arq.readline())
-        return arq
+        try:
+            self.arquivo = open(self.nome_arquivo, 'r') 
+            n = int(self.arquivo.readline())
+            self.arquivo.close()
+            return n
+        except Exception as err:
+           print(f'Erro {err}')
+
 
     def _obtem_nome(self):
-        # Insira o seu código aqui
-        pass
+        """retorna o nome das pessoas em um arquivo"""
+        try:
+            self.arquivo = open(self.nome_arquivo, 'r') 
+            for i in range(self._obtem_num_pessoas()):
+                # print(i)
+                # pessoas.append(i)
+                pass
+        except Exception as err:
+           print(f'Erro {err}')
 
     def _obtem_idade(self):
         # Insira o seu código aqui
@@ -43,13 +55,14 @@ class LeitorPessoas:
 
     def processa(self):
         """processa o arquivo de pessoas"""
-        for p in pessoas in range(LeitorPessoas._obtem_num_pessoas(self)):
-            print('1')
-        # pass
+        self.arquivo.seek(1)
+        # for p in pessoas in range(LeitorPessoas._obtem_num_pessoas(self)):
+        #     print('1')
+        pass
 if __name__ == "__main__":
-    leitor = LeitorPessoas('pessoas.txt')
+    leitor = LeitorPessoas('pessoas_erro4.txt')
     print(leitor._obtem_num_pessoas())
-    # leitor.processa()
+    leitor._obtem_nome()# leitor.processa()
     # leitor.processa()
     # for p in leitor.pessoas:
     #     print(p)
